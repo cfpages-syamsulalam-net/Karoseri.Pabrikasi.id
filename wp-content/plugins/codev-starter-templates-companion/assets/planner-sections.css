@@ -1,0 +1,212 @@
+.codev-section{box-sizing:border-box;width:100%;color:var(--ast-global-color-3,#333333);background:var(--ast-global-color-5,#ffffff);font-family:inherit;padding:48px 0}
+.codev-section *{box-sizing:border-box}
+.codev-section-inner{width:calc(100% - 32px);max-width:1120px;min-width:0;margin-inline:auto}
+.codev-section h1,.codev-section h2,.codev-section h3{color:var(--ast-global-color-2,#111111);word-break:normal !important;overflow-wrap:break-word !important;hyphens:manual !important;}
+.codev-section p,.codev-section a{word-break:normal !important;overflow-wrap:break-word !important;hyphens:manual !important;}
+.codev-section a{color:var(--ast-global-color-0,#046bd2)}
+.codev-section a:hover{color:var(--ast-global-color-1,#045cb4)}
+.codev-section a:focus-visible{outline:3px solid var(--ast-global-color-8,#000000);outline-offset:3px}
+.codev-section small{color:var(--ast-global-color-7,#666666)}
+.codev-section details,.codev-section article{border:1px solid var(--ast-global-color-6,#dddddd);padding:16px;background:var(--ast-global-color-4,#f5f5f5)}
+.codev-section iframe,.codev-section video,.codev-section img{max-width:100%}
+.codev-section iframe{display:block;width:100%;height:380px;border:0}
+.codev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.codev-table-scroll{max-width:100%;overflow-x:auto}
+.codev-section table{border-collapse:collapse;width:100%}
+.codev-section th,.codev-section td{padding:12px;border:1px solid var(--ast-global-color-6,#dddddd);text-align:left}
+@media(min-width:768px){.codev-section-inner{width:calc(100% - 48px)}}
+@media(max-width:767px){.codev-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Responsive Grid Normalization for WordPress / Spectra Containers (TSI-13) */
+@media(max-width:767px){
+	.wp-block-spectra-container.is-layout-grid,
+	.wp-block-spectra-container.wp-block-spectra-container-is-layout-grid,
+	.is-layout-grid{
+		grid-template-columns:1fr !important;
+	}
+}
+
+/* Heading Hierarchy & Subheading Progression (TSI-13, Gate A31) */
+h6,.wp-block-spectra-content[data-tag="h6"]{
+	font-size:1.15rem !important;
+	font-weight:600;
+}
+h5,.wp-block-spectra-content[data-tag="h5"]{
+	font-size:1.15rem !important;
+	font-weight:600;
+}
+h3,.wp-block-spectra-content[data-tag="h3"]{
+	font-size:1.25rem !important;
+	font-weight:600;
+}
+
+/* Typography & Linebreak Invariant: Prevent mid-word character breaks (TSI-14 Gate A41) */
+body, h1, h2, h3, h4, h5, h6, p, a, span, .wp-block-spectra-content, .codev-section, .codev-section * {
+	word-break: normal !important;
+	overflow-wrap: break-word !important;
+	hyphens: manual !important;
+}
+
+/* TSI-16 (Gate A54): Creative Visual Styling - Section Kickers, Step Badges, Elevated Cards */
+.codev-section-heading,
+.codev-section-heading.codev-align-center {
+	text-align: center !important;
+	margin-inline: auto !important;
+	display: block !important;
+	width: 100% !important;
+}
+
+.codev-section-kicker {
+	display: none !important;
+}
+
+.codev-step-badge {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 2.25rem !important;
+	height: 2.25rem !important;
+	border-radius: 50% !important;
+	background-color: var(--ast-global-color-0, #046bd2) !important;
+	color: #ffffff !important;
+	font-size: 0.9rem !important;
+	font-weight: 700 !important;
+	font-variant-numeric: tabular-nums !important;
+	margin-bottom: 0.75rem !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+	line-height: 1 !important;
+	text-align: center !important;
+}
+
+.codev-card,
+.wp-block-uagb-container[data-codev-item],
+.wp-block-spectra-container[data-codev-item],
+article[data-codev-item] {
+	border-radius: 12px !important;
+	border: 1px solid rgba(0, 0, 0, 0.06) !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+	transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.codev-card:hover,
+	.wp-block-uagb-container[data-codev-item]:hover,
+	.wp-block-spectra-container[data-codev-item]:hover,
+	article[data-codev-item]:hover {
+		transform: translateY(-2px) !important;
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09) !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.codev-card,
+	.wp-block-uagb-container[data-codev-item],
+	.wp-block-spectra-container[data-codev-item],
+	article[data-codev-item] {
+		transition: none !important;
+		transform: none !important;
+	}
+}
+
+.codev-surface-dark .codev-card,
+.codev-surface-dark [data-codev-item] {
+	border: 1px solid rgba(255, 255, 255, 0.12) !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+.codev-surface-dark .codev-section-kicker {
+	color: var(--ast-global-color-1, #60a5fa) !important;
+}
+
+/* TSI-19 (Gate A66): Explanatory Narrative Lead Section & Paragraph Typography */
+.codev-narrative-section {
+	padding-top: 50px !important;
+	padding-bottom: 50px !important;
+	max-width: 1140px !important;
+	margin-inline: auto !important;
+	display: block !important;
+	width: 100% !important;
+}
+
+.codev-narrative-paragraph {
+	font-size: 1.05rem !important;
+	line-height: 1.75 !important;
+	color: var(--ast-global-color-3, #475569) !important;
+	max-width: 860px !important;
+	margin-inline: auto !important;
+	margin-bottom: 1.25rem !important;
+	text-align: center !important;
+}
+
+/* TSI-20 (Gate A73): Synthesized Specifications & Items Card Grid */
+.codev-synthesized-grid {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: center !important;
+	gap: 24px !important;
+	margin-top: 32px !important;
+	margin-bottom: 30px !important;
+	width: 100% !important;
+}
+
+.codev-synthesized-grid .codev-card,
+.codev-synthesized-grid .codev-feature-card {
+	flex: 1 1 calc(33.333% - 24px) !important;
+	min-width: 280px !important;
+	max-width: 380px !important;
+	box-sizing: border-box !important;
+	background-color: var(--ast-global-color-5, #ffffff) !important;
+	border: 1px solid var(--ast-global-color-7, #e2e8f0) !important;
+	border-radius: 10px !important;
+	padding: 28px 24px !important;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: flex-start !important;
+	text-align: left !important;
+}
+
+.codev-synthesized-grid .codev-card h3 {
+	margin-top: 10px !important;
+	margin-bottom: 8px !important;
+	font-size: 1.18rem !important;
+	line-height: 1.35 !important;
+	font-weight: 700 !important;
+	color: var(--ast-global-color-2, #1e293b) !important;
+}
+
+.codev-synthesized-grid .codev-card p {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	font-size: 0.95rem !important;
+	line-height: 1.65 !important;
+	color: var(--ast-global-color-3, #475569) !important;
+}
+
+@media(max-width: 920px) {
+	.codev-synthesized-grid .codev-card,
+	.codev-synthesized-grid .codev-feature-card {
+		flex: 1 1 calc(50% - 24px) !important;
+	}
+}
+
+@media(max-width: 640px) {
+	.codev-synthesized-grid .codev-card,
+	.codev-synthesized-grid .codev-feature-card {
+		flex: 1 1 100% !important;
+		min-width: 100% !important;
+	}
+}
+
+/* Astra Header Logo Deduplication: Hide duplicate text site title when logo image is present */
+.site-logo-img + .ast-site-title-wrap,
+.custom-logo-link + .ast-site-title-wrap,
+.site-branding:has(.site-logo-img) .ast-site-title-wrap,
+.site-branding:has(.custom-logo-link) .ast-site-title-wrap {
+	display: none !important;
+}
+
+
+
+
+
